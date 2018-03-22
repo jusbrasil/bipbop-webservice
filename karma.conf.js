@@ -4,7 +4,7 @@ module.exports = function karmaRunner(config) {
     frameworks: ['mocha'],
     files: [
       './bundle.js',
-      './tests/**/*.spec.js',
+      './tests/browser.spec.js',
     ],
     exclude: [],
     preprocessors: {
