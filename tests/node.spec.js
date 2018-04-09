@@ -1,4 +1,4 @@
-const { WebService, Push, pushParameters } = require('../bundle.js');
+const { WebService, Push, pushParameters, get } = require('../bundle.js');
 
 const { apiKey } = process.env;
 
@@ -20,6 +20,7 @@ describe('#halo', () => {
     [pushParameters.query]: 'SELECT FROM \'INFO\'.\'INFO\'',
   }).then(response => response.text())
     .then(text => WebService.parse(text))
+    .then(text => get(text, 'BPQL.header.exception'))
     .then(text => console.log(text)));
 });
 
