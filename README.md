@@ -16,6 +16,10 @@ This package is provided in these module formats:
 
 - [form-data](https://github.com/form-data/form-data): A library to create readable "multipart/form-data" streams. Can be used to submit forms and file uploads to other web applications.
 - whatwg-fetch
+<<<<<<< HEAD
+=======
+
+>>>>>>> 03a217800a57a9d8bde3919b1c5987ec57d6cee3
 
 ## Dev Dependencies
 
@@ -29,6 +33,7 @@ This package is provided in these module formats:
 - [rollup-analyzer](https://github.com/doesdev/rollup-analyzer): Analyze file sizes of rollup bundled imports
 - [rollup-plugin-filesize](https://github.com/ritz078/rollup-plugin-filesize): A rollup plugin to show filesize in the cli
 - [rollup-plugin-uglify-es](https://github.com/ezekielchentnik/rollup-plugin-uglify-es): Rollup plugin to minify generated bundle
+<<<<<<< HEAD
 - rollup-plugin-node-resolve
 - object-assign
 - lodash
@@ -36,6 +41,16 @@ This package is provided in these module formats:
 - eslint
 - rollup-plugin-buble
 - rollup-plugin-commonjs
+=======
+- eslint
+- lodash
+- object-assign
+- rollup
+- rollup-plugin-buble
+- rollup-plugin-node-resolve
+- rollup-plugin-commonjs
+
+>>>>>>> 03a217800a57a9d8bde3919b1c5987ec57d6cee3
 
 ## License
-[MIT]()
+MIT
