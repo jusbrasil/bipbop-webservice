@@ -1,4 +1,4 @@
-# bipbop-webservice@1.0.7
+# bipbop-webservice@1.0.8
 Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.
 
 ## Installation
