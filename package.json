@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "bundle.js",
   "repository": "git@github.com:bipbop/bipbop-webservice.git",
@@ -12,8 +12,9 @@
   },
   "devDependencies": {
     "es6-error": "^4.1.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "fast-xml-parser": "^3.3.5",
     "karma": "^2.0.2",
     "karma-buble-preprocessor": "^1.2.3",
