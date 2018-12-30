@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "bundle.js",
   "repository": "git@github.com:bipbop/bipbop-webservice.git",
@@ -30,11 +30,11 @@
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-filesize": "^1.5.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify-es": "^0.0.1"
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "promise-limit": "^2.7.0"
   },
   "dependencies": {
     "cross-fetch": "^2.1.0",
-    "form-data": "^2.3.2",
-    "promise-limit": "^2.7.0"
+    "form-data": "^2.3.2"
   }
 }
