@@ -3058,6 +3058,10 @@ progress@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
 
+promise-limit-manager@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/promise-limit-manager/-/promise-limit-manager-1.0.0.tgz#23b6d1f7a357e882374ef3d09daddabbdb67cdb8"
+
 promise-limit@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/promise-limit/-/promise-limit-2.7.0.tgz#eb5737c33342a030eaeaecea9b3d3a93cb592b26"
