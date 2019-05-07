@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "./web-service.js",
   "repository": "git@github.com:bipbop/bipbop-webservice.git",
