@@ -57,3 +57,17 @@ typings/
 # dotenv environment variables file
 .env
 
+error-codes.d.ts
+push.d.ts
+push-parameters.d.ts
+chunk-64af69c8.js
+exception.js
+web-service.d.ts
+exception.d.ts
+push.js
+web-service.js
+error-codes.js
+browser.d.ts
+push-parameters.js
+chunk-*.js
+browser.js
