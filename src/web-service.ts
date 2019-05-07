@@ -1,7 +1,6 @@
 import FormData from 'form-data';
 import fetch from 'cross-fetch';
 import querystring from 'querystring';
-import Parser, { X2jOptionsOptional } from 'fast-xml-parser';
 import managerPromise from 'promise-limit';
 
 const defaultApiKey: string = '6057b71263c21e4ada266c9d4d4da613';
@@ -46,13 +45,5 @@ export default class WebService {
 
   request(query: string, form: Form | FormData = {}, urlData: Form = {}) : Promise<Response> {
     return this.bipbopLimit(() => fetch(...this.object(query, form, urlData)));
-  }
-
-  static parse(xmlStr: string, options: X2jOptionsOptional = {
-    parseNodeValue: false,
-    parseAttributeValue: false,
-    attributeNamePrefix: '@',
-  }) : any {
-    return Parser.parse(xmlStr, options);
   }
 }

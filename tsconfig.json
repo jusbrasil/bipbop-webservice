@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "declarationDir": "dist",
+    "declarationDir": ".",
     "declaration": true,
     "target": "es2015",
     "module": "es2015",

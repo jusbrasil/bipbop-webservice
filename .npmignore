@@ -1,0 +1,8 @@
+src
+tests
+.vscode
+*.config.js
+.*
+*.log
+*.json
+*.tgz

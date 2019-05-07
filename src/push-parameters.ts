@@ -1,0 +1,25 @@
+enum PushParameters {
+    callback = 'pushCallback',
+    juristekCallback = 'juristekCallback',
+    at = 'pushAt',
+    document  = 'pushDocument',
+    documentCharset  = 'pushDocumentCharset',
+    documentContentType  = 'pushDocumentContentType',
+    everyCase  = 'pushEveryCase',
+    expire  = 'pushExpire',
+    id  = 'pushId',
+    interval  = 'pushInterval',
+    label  = 'pushLabel',
+    locked  = 'pushLocked',
+    maxCallbackTrys  = 'pushMaxCallbackTrys',
+    maxVersion  = 'pushMaxVersion',
+    priority  = 'pushPriority',
+    query  = 'pushQuery',
+    tags  = 'pushTags',
+    tryIn  = 'pushTryIn',
+    version  = 'pushVersion',
+    webSocketDeliver  = 'pushWebSocketDeliver',
+    weekdays  = 'pushWeekdays',
+  };
+
+  export default PushParameters;

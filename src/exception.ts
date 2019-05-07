@@ -1,7 +1,6 @@
-import Exception from 'es6-error';
 import ErrorCodes from './error-codes';
 
-export default class BIPBOPException extends Exception {
+export default class BIPBOPException extends Error {
 
     public push: boolean | undefined;
     public code: ErrorCodes | undefined;
