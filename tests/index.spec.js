@@ -1,6 +1,6 @@
 const {
-  WebService, Push, pushParameters, get,
-} = require('../bundle.js');
+  WebService, Push, PushParameters,
+} = require('../dist/index');
 
 const { apiKey } = process.env;
 
@@ -18,9 +18,8 @@ describe('#halo', () => {
 
   const push = new Push(ws);
   it('#push', () => push.insertJob({
-    [pushParameters.query]: 'SELECT FROM \'INFO\'.\'INFO\'',
+    [PushParameters.query]: 'SELECT FROM \'INFO\'.\'INFO\'',
   }).then(response => response.text())
     .then(text => WebService.parse(text))
-    .then(text => get(text, 'BPQL.header.exception'))
     .then(text => console.log(text)));
 });
