@@ -1,4 +1,4 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
@@ -170,4 +170,4 @@ exports._objectSpread = _objectSpread;
 exports._possibleConstructorReturn = _possibleConstructorReturn;
 exports._toConsumableArray = _toConsumableArray;
 /* www.bipbop.com.br */
-//# sourceMappingURL=chunk-b130bd2b.js.map
+//# sourceMappingURL=chunk-e8134695.js.map

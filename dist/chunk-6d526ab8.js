@@ -1,7 +1,7 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
-var __chunk_2 = require('./chunk-74bab327.js');
+var __chunk_2 = require('./chunk-5bed5cc1.js');
 
 // `RegExp.prototype.flags` getter implementation
 // https://tc39.github.io/ecma262/#sec-get-regexp.prototype.flags
@@ -1849,4 +1849,4 @@ exports.root = _root;
 exports.toKey = _toKey;
 exports.toSource = _toSource;
 /* www.bipbop.com.br */
-//# sourceMappingURL=chunk-0036cf04.js.map
+//# sourceMappingURL=chunk-6d526ab8.js.map

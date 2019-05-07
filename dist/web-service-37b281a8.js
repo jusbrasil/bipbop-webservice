@@ -1,10 +1,10 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var __chunk_1 = require('./chunk-b130bd2b.js');
-var __chunk_2 = require('./chunk-74bab327.js');
+var __chunk_1 = require('./chunk-e8134695.js');
+var __chunk_2 = require('./chunk-5bed5cc1.js');
 var FormData = _interopDefault(require('form-data'));
 var fetch = _interopDefault(require('cross-fetch'));
 
@@ -1653,4 +1653,4 @@ exports.WebService = WebService;
 exports.aFunction = aFunction;
 exports.bind = bindContext;
 /* www.bipbop.com.br */
-//# sourceMappingURL=web-service-bb6088bd.js.map
+//# sourceMappingURL=web-service-37b281a8.js.map

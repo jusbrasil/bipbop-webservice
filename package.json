@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "dist/index.js",
   "repository": "git@github.com:bipbop/bipbop-webservice.git",
@@ -43,5 +43,6 @@
   "dependencies": {
     "cross-fetch": "^3.0.2",
     "form-data": "^2.3.3"
-  }
+  },
+  "types": "dist/index.d.ts"
 }

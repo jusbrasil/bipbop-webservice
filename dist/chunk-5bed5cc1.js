@@ -1,4 +1,4 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 var toString = {}.toString;
@@ -580,4 +580,4 @@ exports.toLength = toLength;
 exports.toObject = toObject;
 exports.toPrimitive = toPrimitive;
 /* www.bipbop.com.br */
-//# sourceMappingURL=chunk-74bab327.js.map
+//# sourceMappingURL=chunk-5bed5cc1.js.map

@@ -1,10 +1,10 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var errorCodes = require('./error-codes.js');
-var __chunk_1 = require('./chunk-b130bd2b.js');
+var __chunk_1 = require('./chunk-e8134695.js');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 

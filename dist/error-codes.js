@@ -1,4 +1,4 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

@@ -1,11 +1,11 @@
-/* bipbop-webservice version 2.0.0 */
+/* bipbop-webservice version 2.0.1 */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-require('./chunk-b130bd2b.js');
-require('./chunk-74bab327.js');
-var webService = require('./web-service-bb6088bd.js');
+require('./chunk-e8134695.js');
+require('./chunk-5bed5cc1.js');
+var webService = require('./web-service-37b281a8.js');
 require('form-data');
 require('cross-fetch');
 
