@@ -49,7 +49,7 @@ export default [{
       format: 'cjs',
       file: './browser.js',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: false,
       strict: false,
     },
   ],
@@ -62,6 +62,6 @@ export default [{
     resolve({ preferBuiltins: false }),
     sourceMaps(),
     filesize(),
-    // uglify(),
+    uglify(),
   ],
 }];
