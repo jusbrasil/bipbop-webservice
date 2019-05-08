@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "./web-service.js",
   "keywords": [
@@ -16,7 +16,7 @@
     "clean": "find -maxdepth 1 \\( -name \"*.js\" -or -name \"*.d.ts\" \\) -type f -not -name rollup.config.js -delete",
     "prebuild": "npm run clean",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly\"",
-    "pack": "npm run build"
+    "prepack": "npm run build"
   },
   "browser": "./browser.js",
   "devDependencies": {
