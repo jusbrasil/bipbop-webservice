@@ -26,6 +26,7 @@ export default [{
       dir: '.',
       exports: 'default',
       sourcemap: false,
+      strict: false,
     },
   ],
   watch: {
@@ -48,7 +49,8 @@ export default [{
       format: 'cjs',
       file: './browser.js',
       exports: 'named',
-      sourcemap: false,
+      sourcemap: true,
+      strict: false,
     },
   ],
   watch: {
@@ -60,6 +62,6 @@ export default [{
     resolve({ preferBuiltins: false }),
     sourceMaps(),
     filesize(),
-    uglify(),
+    // uglify(),
   ],
 }];

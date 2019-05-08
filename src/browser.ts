@@ -1,15 +1,15 @@
-import { default as WebService } from './web-service';
-import { default as Push } from './push';
-import { default as PushParameters } from './push';
-import { default as ErrorCodes } from './error-codes';
-import { default as Exception } from './exception';
+import WebService from './web-service';
+import Push from './push';
+import PushParameters from './push';
+import Exception from './exception';
+import Exceptions from './exception';
+import ErrorCodes from './error-codes';
 
-const BipbopClient = {
+export {
     WebService,
     Push,
     PushParameters,
     ErrorCodes,
     Exception,
+    Exceptions,
 };
-
-export { BipbopClient };
