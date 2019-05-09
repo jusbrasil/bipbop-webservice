@@ -13,10 +13,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "clean": "find -maxdepth 1 \\( -name \"*.js\" -or -name \"*.d.ts\" \\) -type f -not -name rollup.config.js -delete",
+    "clean": "rimraf './!(rollup.config).js' './*.d.ts'",
     "prebuild": "npm run clean",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly\"",
-    "prepack": "npm run build"
+    "prepare": "npm run build"
   },
   "browser": "./browser.js",
   "devDependencies": {
@@ -34,6 +34,7 @@
     "lodash": "^4.17.11",
     "promise-limit": "^2.7.0",
     "querystring": "^0.2.0",
+    "rimraf": "^2.6.3",
     "rollup": "^1.11.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
