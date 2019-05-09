@@ -2,7 +2,7 @@
   "name": "bipbop-webservice",
   "version": "2.0.7",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
-  "main": "./web-service.js",
+  "main": "./index.js",
   "keywords": [
     "webservice",
     "bipbop",

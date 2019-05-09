@@ -73,15 +73,14 @@ export default class WebService {
     }];
   }
 
-  /**
-   * Realiza uma requisição
-   * 
-   * @param query Consulta a BIPBOP (ex.: SELECT FROM 'INFO'.'INFO')
-   * @param form Parâmetros da consulta - POST
-   * @param urlData Parâmetros da consulta - GET
-   */
-  request(query: string, form: Form | FormData = {}, urlData: Form = {}) : Promise<Response> {
-    return this.bipbopLimit(() => this.validate(fetch(...this.object(query, form, urlData))));
+  private async validate(responsePromise: Promise<Response> | Response) : Promise<Response> {
+    const response = await Promise.resolve(responsePromise);
+    if (!response.ok) {
+      const xml = await response.text();
+      if (!this.throwException(xml))
+        throw ExceptionUnknown.factory('Unknown exception', ErrorCodes.E_UNKNOWN, false);
+    }
+    return response;
   }
 
   private throwException(xml: string) : boolean {
@@ -116,6 +115,17 @@ export default class WebService {
   }
 
   /**
+   * Realiza uma requisição
+   * 
+   * @param query Consulta a BIPBOP (ex.: SELECT FROM 'INFO'.'INFO')
+   * @param form Parâmetros da consulta - POST
+   * @param urlData Parâmetros da consulta - GET
+   */
+  request(query: string, form: Form | FormData = {}, urlData: Form = {}) : Promise<Response> {
+    return this.bipbopLimit(() => this.validate(fetch(...this.object(query, form, urlData))));
+  }
+
+  /**
    * Faz o parser de uma requisição BIPBOP
    * @param responsePromise Request inicializado
    * @returns No caso de um XML retorna um Document (https://developer.mozilla.org/pt-BR/docs/Web/API/Document), se não, um tipo qualquer.
@@ -130,15 +140,5 @@ export default class WebService {
       case 'xml': return new DOMParser().parseFromString(xml);
     }
     throw ExceptionUnknown.factory('Unable to determine response type', ErrorCodes.E_UNKNOWN, false);
-  }
-
-  private async validate(responsePromise: Promise<Response> | Response) : Promise<Response> {
-    const response = await Promise.resolve(responsePromise);
-    if (!response.ok) {
-      const xml = await response.text();
-      if (!this.throwException(xml))
-        throw ExceptionUnknown.factory('Unknown exception', ErrorCodes.E_UNKNOWN, false);
-    }
-    return response;
   }
 }
