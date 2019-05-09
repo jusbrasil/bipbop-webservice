@@ -2,7 +2,7 @@
   "name": "bipbop-webservice",
   "version": "2.0.7",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
-  "main": "./index.js",
+  "main": "index.js",
   "keywords": [
     "webservice",
     "bipbop",
@@ -18,7 +18,7 @@
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly\"",
     "prepare": "npm run build"
   },
-  "browser": "./browser.js",
+  "browser": "browser.js",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/polyfill": "^7.4.4",

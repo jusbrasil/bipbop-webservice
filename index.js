@@ -5250,14 +5250,18 @@ var defaultApiKey = '6057b71263c21e4ada266c9d4d4da613';
  * se comunicar com a BIPBOP com facilidade usando o esquema fetch
  * https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
  * 
- * ```ts
- * import WebService from 'bipbop-webservice'
- * const maxClients: number = 10;
- * const fetchOptions: RequestInit = {}; // https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
- * const webService: WebService = new WebService('bipbop-apikey', maxClients, fetchOptions);
- * const response: Response = await webService.request("SELECT FROM 'INFO'.'INFO'");
- * const responseBody: string = await response.text();
- * console.log(responseBody);
+ * @example
+ * ```typescript
+ *import WebService from 'bipbop-webservice/web-service';
+ *
+ *const maxClients = 10;
+ *const fetchOptions: RequestInit = {}; // https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
+ *const apiKey = '<secret>'; // Chave de API da BIPBOP (https://www.bipbop.com.br)
+ *
+ *new WebService(apiKey, maxClients, fetchOptions)
+ *  .request("SELECT FROM 'INFO'.'INFO'")
+ *  .then(r => r.text())
+ *  .then(r => console.log(r));
  * ```
  */
 var WebService =
