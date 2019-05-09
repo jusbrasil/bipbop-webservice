@@ -50,5 +50,5 @@
     "cross-fetch": "^3.0.2",
     "form-data": "^2.3.3"
   },
-  "types": "dist/index.d.ts"
+  "types": "index.d.ts"
 }
