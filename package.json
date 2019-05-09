@@ -16,7 +16,7 @@
     "clean": "rimraf './!(rollup.config).js' './*.d.ts'",
     "prebuild": "npm run clean",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly\"",
-    "prepack": "npm run build"
+    "prepare": "npm run build"
   },
   "browser": "./browser.js",
   "devDependencies": {
