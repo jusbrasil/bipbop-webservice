@@ -24,7 +24,7 @@ type FormPrepare = (data: Form | FormData | undefined | null) => FormData | unde
  * 
  * @example
  * ```typescript
- *import WebService from 'bipbop-webservice/web-service'
+ *import WebService from 'bipbop-webservice/web-service';
  *
  *const maxClients = 10;
  *const fetchOptions: RequestInit = {}; // https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch
