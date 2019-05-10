@@ -6,7 +6,7 @@ export default class BIPBOPException extends Error {
     public code: ErrorCodes | undefined;
 
     static factory(message?: string | undefined, code: ErrorCodes = ErrorCodes.E_UNKNOWN, push: boolean = false) : BIPBOPException {
-        const exception = new BIPBOPException(message);
+        const exception = new this(message);
         exception.code = code;
         exception.push = push;
         return exception;
