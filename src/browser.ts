@@ -3,11 +3,9 @@ import Exception from './exception';
 import Exceptions from './exception';
 import ErrorCodes from './error-codes';
 
-const bipbop = {
+export {
     WebService,
     ErrorCodes,
     Exception,
     Exceptions,
 };
-
-export { bipbop };

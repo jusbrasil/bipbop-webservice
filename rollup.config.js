@@ -46,11 +46,16 @@ export default [{
     {
       banner: `/* bipbop-webservice version ${version} */`,
       footer: '/* www.bipbop.com.br */',
-      format: 'cjs',
+      name: 'bipbop',
+      format: 'umd',
       file: './browser.js',
       exports: 'named',
       sourcemap: false,
       strict: false,
+      globals: {
+        "form-data" : 'FormData',
+        "cross-fetch" : 'fetch',
+      }
     },
   ],
   watch: {
