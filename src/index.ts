@@ -7,7 +7,6 @@ import ExceptionUnknown from './exception-unknown';
 import ErrorCodes from './error-codes';
 import Exceptions from './exceptions';
 
-
 /**
  * Chave de API livre ao público para comunicação anônima
  */
@@ -81,15 +80,15 @@ export default class WebService {
     const response = await Promise.resolve(responsePromise);
     if (!response.ok) {
       const xml = await response.text();
-      if (!this.throwException(xml))
+      const domParser = new DOMParser();
+      const dom = domParser.parseFromString(xml);  
+      if (!WebService.throwException(dom))
         throw ExceptionUnknown.factory('Unknown exception', ErrorCodes.E_UNKNOWN, false);
     }
     return response;
   }
 
-  private throwException(xml: string) : boolean {
-    const domParser = new DOMParser();
-    const dom = domParser.parseFromString(xml);
+  static throwException(dom: Document) : boolean {
     const tagExceptions = dom.getElementsByTagName('exception');
     if (!tagExceptions.length) return false;
 
