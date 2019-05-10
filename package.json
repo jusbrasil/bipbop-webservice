@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "index.js",
   "keywords": [
