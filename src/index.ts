@@ -12,7 +12,7 @@ import Exceptions from './exceptions';
  */
 const defaultApiKey: string = '6057b71263c21e4ada266c9d4d4da613';
 
-export type Form = {[conf: string]: string};
+export interface Form {[conf: string]: string};
 
 type FormPrepare = (data: Form | FormData | undefined | null) => FormData | undefined;
 
@@ -133,15 +133,24 @@ export default class WebService {
    * @param responsePromise Request inicializado
    * @returns No caso de um XML retorna um Document (https://developer.mozilla.org/pt-BR/docs/Web/API/Document), se não, um tipo qualquer.
    */
+  static async parseContent(contentType: string, text: string) : Promise<any> {
+    const type = (contentType.split(';', 2).shift() || '').split('/').pop() || '';
+    switch (type) {
+      case 'json': return JSON.parse(text);
+      case 'xml': return new DOMParser().parseFromString(text);
+      case 'plain': return text;
+    }
+    throw ExceptionUnknown.factory('Unable to determine response type', ErrorCodes.E_UNKNOWN, false);
+  }
+
+  /**
+   * Faz o parser de uma requisição BIPBOP
+   * @param responsePromise Request inicializado
+   * @returns No caso de um XML retorna um Document (https://developer.mozilla.org/pt-BR/docs/Web/API/Document), se não, um tipo qualquer.
+   */
   static async parse(responsePromise: Promise<Response> | Response) : Promise<any> {
     const response = await Promise.resolve(responsePromise);
     const contentType = response.headers.get('content-type') || '';
-    const type = (contentType.split(';', 2).shift() || '').split('/').pop() || '';
-    const xml = await response.text();
-    switch (type) {
-      case 'json': return JSON.parse(xml);
-      case 'xml': return new DOMParser().parseFromString(xml);
-    }
-    throw ExceptionUnknown.factory('Unable to determine response type', ErrorCodes.E_UNKNOWN, false);
+    return this.parseContent(contentType, await response.text());
   }
 }
