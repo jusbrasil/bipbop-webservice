@@ -24,7 +24,7 @@ export default [{
       format: 'cjs',
       dir: '.',
       exports: 'default',
-      sourcemap: false,
+      sourcemap: true,
       strict: false,
     },
   ],
@@ -48,7 +48,7 @@ export default [{
       format: 'umd',
       file: './browser.js',
       exports: 'named',
-      sourcemap: false,
+      sourcemap: true,
       strict: false,
       globals: {
         "form-data" : 'FormData',

@@ -57,7 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+
 # Build
+*.map
 error-codes.d.ts
 push.d.ts
 push-parameters.d.ts

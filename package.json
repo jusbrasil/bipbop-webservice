@@ -1,6 +1,6 @@
 {
   "name": "bipbop-webservice",
-  "version": "2.0.16",
+  "version": "2.0.18",
   "description": "Chamada aos serviços da BIPBOP via NodeJS ou pelo navegador.",
   "main": "index.js",
   "keywords": [
@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "clean": "rimraf './!(rollup.config).js' './*.d.ts'",
+    "clean": "rimraf './!(rollup.config).js' './*.d.ts' './*.map'",
     "prebuild": "npm run clean",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly\"",
     "prepare": "npm run build"

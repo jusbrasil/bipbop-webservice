@@ -1,3 +1,8 @@
 import Exception from './exception';
 
-export default class ExceptionNotFound extends Exception {}
+export default class ExceptionNotFound extends Exception {
+  constructor(msg: string | undefined) {
+    super(msg);
+    Object.setPrototypeOf(this, ExceptionNotFound.prototype);
+  }
+}
