@@ -90,13 +90,13 @@ function _objectSpread2(target) {
     var source = arguments[i] != null ? arguments[i] : {};
 
     if (i % 2) {
-      ownKeys(source, true).forEach(function (key) {
+      ownKeys(Object(source), true).forEach(function (key) {
         _defineProperty(target, key, source[key]);
       });
     } else if (Object.getOwnPropertyDescriptors) {
       Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
     } else {
-      ownKeys(source).forEach(function (key) {
+      ownKeys(Object(source)).forEach(function (key) {
         Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
       });
     }
@@ -251,4 +251,4 @@ exports._objectSpread2 = _objectSpread2;
 exports._possibleConstructorReturn = _possibleConstructorReturn;
 exports._toConsumableArray = _toConsumableArray;
 exports._wrapNativeSuper = _wrapNativeSuper;
-//# sourceMappingURL=_rollupPluginBabelHelpers-ff86839e.js.map
+//# sourceMappingURL=_rollupPluginBabelHelpers-cc605ba5.js.map
