@@ -1,3 +1,5 @@
+var errorCodes = require('./error-codes.js');
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
     var info = gen[key](arg);
@@ -136,7 +138,7 @@ function _setPrototypeOf(o, p) {
   return _setPrototypeOf(o, p);
 }
 
-function isNativeReflectConstruct() {
+function _isNativeReflectConstruct() {
   if (typeof Reflect === "undefined" || !Reflect.construct) return false;
   if (Reflect.construct.sham) return false;
   if (typeof Proxy === "function") return true;
@@ -150,7 +152,7 @@ function isNativeReflectConstruct() {
 }
 
 function _construct(Parent, args, Class) {
-  if (isNativeReflectConstruct()) {
+  if (_isNativeReflectConstruct()) {
     _construct = Reflect.construct;
   } else {
     _construct = function _construct(Parent, args, Class) {
@@ -220,35 +222,96 @@ function _possibleConstructorReturn(self, call) {
   return _assertThisInitialized(self);
 }
 
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
 function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
 
 function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
 }
 
 function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
 }
 
 function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
+var BIPBOPException = /*#__PURE__*/function (_Error) {
+  _inherits(BIPBOPException, _Error);
+
+  var _super = _createSuper(BIPBOPException);
+
+  function BIPBOPException(msg) {
+    var _this;
+
+    _classCallCheck(this, BIPBOPException);
+
+    _this = _super.call(this, msg);
+    Object.setPrototypeOf(_assertThisInitialized(_this), BIPBOPException.prototype);
+    return _this;
+  }
+
+  _createClass(BIPBOPException, null, [{
+    key: "factory",
+    value: function factory(message) {
+      var code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : errorCodes.E_UNKNOWN;
+      var push = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var exception = new this(message);
+      exception.code = code;
+      exception.push = push;
+      return exception;
+    }
+  }]);
+
+  return BIPBOPException;
+}( /*#__PURE__*/_wrapNativeSuper(Error));
+
+exports.BIPBOPException = BIPBOPException;
 exports._assertThisInitialized = _assertThisInitialized;
 exports._asyncToGenerator = _asyncToGenerator;
 exports._classCallCheck = _classCallCheck;
 exports._createClass = _createClass;
+exports._createSuper = _createSuper;
 exports._defineProperty = _defineProperty;
-exports._getPrototypeOf = _getPrototypeOf;
 exports._inherits = _inherits;
 exports._objectSpread2 = _objectSpread2;
-exports._possibleConstructorReturn = _possibleConstructorReturn;
 exports._toConsumableArray = _toConsumableArray;
-exports._wrapNativeSuper = _wrapNativeSuper;
-//# sourceMappingURL=_rollupPluginBabelHelpers-cc605ba5.js.map
+//# sourceMappingURL=exception-66678d91.js.map

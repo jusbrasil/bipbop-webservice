@@ -16,6 +16,7 @@ export interface Form {[conf: string]: string};
 
 type FormPrepare = (data: Form | FormData | undefined | null) => FormData | undefined;
 
+
 /**
  * A classe WebService é responsável para que aplicações possam
  * se comunicar com a BIPBOP com facilidade usando o esquema fetch
@@ -36,9 +37,12 @@ type FormPrepare = (data: Form | FormData | undefined | null) => FormData | unde
  * ```
  */
 export default class WebService {
-	public configs: RequestInit;
-  public apiKey: string;
+  public static enviroment = {
+    endpoint: 'irql.bipbop.com.br'
+  }
 
+  public configs: RequestInit;
+  public apiKey: string;
   private bipbopLimit: ((fn: () => Promise<Response>) => Promise<Response>)
 
   /**
@@ -65,7 +69,8 @@ export default class WebService {
   }
 
   private object(query: string, form?: Form | FormData, urlData?: Form, prepareFormData: FormPrepare = WebService.formData) : [string, RequestInit] {
-    return [`https://irql.bipbop.com.br/?${querystring.stringify({
+    const { endpoint } = WebService.enviroment;
+    return [`https://${endpoint}/?${querystring.stringify({
       apiKey: this.apiKey,
       q: query,
       ...urlData
